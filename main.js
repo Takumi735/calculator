@@ -22,8 +22,12 @@ for (let i = 0; i < buttons.length; i++) {
                 result.textContent = result.textContent.slice(0, -1);
             }
 
-            if (result.textContent === "0" && !isNaN(Number(buttons[i].textContent))) {
+            if (result.textContent === "0" && buttons[i].textContent !=="." && buttons[i].textContent !=="00") {
                 result.textContent = buttons[i].textContent;
+            }
+
+            else if (result.textContent === "0" && buttons[i].textContent == "00") {
+                result.textContent = "0"
             }
 
             else {
